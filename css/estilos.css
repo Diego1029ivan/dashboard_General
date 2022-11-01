@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto Slab", sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.contenedor {
+  
+  width: 100%;
+  height: 100vh;
+  
+  
+  
+}
+.logo{
+    width: 80px;
+}
+
+.contenedor .izquierda{
+    
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    padding-left: 10%;
+    animation-duration: 1s;
+    animation-name: conte-izquierda;
+    
+    
+    
+}
+
+@keyframes conte-izquierda {
+    0% {
+      margin-top: 100%;
+      
+    }
+    
+    100% {
+      margin-top: 0;
+      
+    }
+  }
+
+.contenedor .izquierda form{
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+}
+form input{
+    margin-top: 10px;
+}
+.contenedor .derecha{
+    width: 40%;
+    align-items: center;
+    display: flex;
+    animation-duration: 1s;
+    animation-name: imgd1;
+    
+}
+@keyframes imgd1 {
+  0% {
+    margin-left: 100%;
+    
+  }
+  
+  100% {
+    margin-left: 0%;
+    
+    
+  }
+}
+.contenedor .derecha2{
+  width: 40%;
+  align-items: center;
+  display: none !important;
+  
+  animation-duration: 1s;
+    animation-name: imgd2;
+  
+}
+@keyframes imgd2 {
+  0% {
+    margin-left: 100%;
+    
+  }
+  
+  100% {
+    margin-left: 0%;
+    
+    
+  }
+}
+.derecha img{
+  width: 100%;
+  padding: 20px 20px;
+  
+  
+  
+}
+
+
+.derecha2 img{
+  width: 100%;
+  padding: 20px 20px;
+  
+  
+}
+
+
+.contenedor .registrar{
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    padding-right: 10%;
+    display: none ;
+    left: 40%;
+    animation-duration: 1s;
+    animation-name: registrar1;
+    
+   
+    
+}
+
+@keyframes registrar1 {
+  0% {
+    opacity: 0;
+    
+  }
+  
+  100% {
+    opacity: 1;
+    
+    
+  }
+}
+.registro-izquierdo{
+  width: 100%;
+  padding: 10px 10px;
+}
+.registro-derecho{
+  width: 100%;
+  padding: 10px 10px;
+}
+
+
+
+
+.registro-fin{
+    margin-top: 20px;
+    width: 50%;
+    margin-left: 25%;
+    align-items: center;
+}
+.superficial{
+    position:absolute;
+    right: 0;
+    background-color: rgba(42, 172, 189, 0.26);
+    height: 100vh;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    padding: 0 20px;
+    animation-duration: 1s;
+    animation-name: super1;
+    
+    
+}
+
+@keyframes super1 {
+    0% {
+      right: 40%;
+      
+    }
+    
+    100% {
+        right: 0%;
+      
+    }
+  }
+.superficial2{
+    
+    position:absolute;
+    display: none;
+    background-color: rgba(42, 172, 189, 0.26);
+    height: 100vh;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    padding: 0 20px;
+    animation-duration: 2s;
+    animation-name: super2;
+
+}
+
+@keyframes super2 {
+    0% {
+      left: 80%;
+      
+    }
+    
+    100% {
+        left: 0%;
+      
+    }
+  }
+
+
+/** Botones**/
+
+.btn-google {
+  color: #fff;
+  background-color: #ea4335;
+  border-color: #fff;
+}
+
+.btn-google:hover {
+  color: #fff;
+  background-color: #e12717;
+  border-color: #e6e6e6;
+  text-decoration: none;
+}
+
+.btn-google:focus, .btn-google.focus {
+  color: #fff;
+  background-color: #e12717;
+  border-color: #e6e6e6;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-google.disabled, .btn-google:disabled {
+  color: #fff;
+  background-color: #ea4335;
+  border-color: #fff;
+}
+
+.btn-google:not(:disabled):not(.disabled):active, .btn-google:not(:disabled):not(.disabled).active,
+.show > .btn-google.dropdown-toggle {
+  color: #fff;
+  background-color: #d62516;
+  border-color: #dfdfdf;
+}
+
+.btn-google:not(:disabled):not(.disabled):active:focus, .btn-google:not(:disabled):not(.disabled).active:focus,
+.show > .btn-google.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #fff;
+}
+
+.btn-facebook:hover {
+  color: #fff;
+  background-color: #30497c;
+  border-color: #e6e6e6;
+  text-decoration: none;
+}
+
+.btn-facebook:focus, .btn-facebook.focus {
+  color: #fff;
+  background-color: #30497c;
+  border-color: #e6e6e6;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-facebook.disabled, .btn-facebook:disabled {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #fff;
+}
+
+.btn-facebook:not(:disabled):not(.disabled):active, .btn-facebook:not(:disabled):not(.disabled).active,
+.show > .btn-facebook.dropdown-toggle {
+  color: #fff;
+  background-color: #2d4373;
+  border-color: #dfdfdf;
+}
+
+.btn-facebook:not(:disabled):not(.disabled):active:focus, .btn-facebook:not(:disabled):not(.disabled).active:focus,
+.show > .btn-facebook.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+.btn-user {
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-ingreso{
+  border-radius: 20px;
+  padding: 7px 7px;
+  font-size: 1rem;
+}
