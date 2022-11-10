@@ -480,8 +480,8 @@
                                             <td><?= $usuario->estado?></td>
                                             <td><?php echo $rolesU->nombreRol?></td>
                                             <td class="botones-tabla">
-                                                <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="./crud/eliminar.php?id=<?php echo $usuario->id?>" onclick="return confirm('Estás seguro que deseas eliminar el usuario?'); "><i class="fas fa-trash-alt"></i></a>
+                                                <a href="./crud/editarusuario.php?id=<?php echo $usuario->id?>"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="./crud/eliminarusuario.php?id=<?php echo $usuario->id?>" onclick="return confirm('Estás seguro que deseas eliminar el usuario?'); "><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     <?php 
