@@ -1,4 +1,5 @@
 <?php
+    
     $urlapi="http://localhost:75/api/";
 	$curl = curl_init();
 
@@ -15,7 +16,13 @@
 	$response = curl_exec($curl);
 	curl_close($curl);
 	$data = json_decode($response); 
-    var_dump($data);
+
+    
+
+    //var_dump($data);
+    //echo($roles); 
+    //die;
+    //var_dump($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +35,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard-Hoteles</title>
+    <title>Dashboard-Hotele</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -89,8 +96,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item active" href="usuarios_est.html">Usuarios estándares</a>
-                        <a class="collapse-item" href="usuarios_hotel.html">Usuarios Hoteles</a>
+                        <a class="collapse-item active" href="usuarios_est.php">Usuarios estándares</a>
+                        <a class="collapse-item" href="usuarios_hotel.php">Usuarios Hoteles</a>
                     </div>
                 </div>
             </li>
@@ -440,6 +447,7 @@
                                             <th>Nombre_Usuario</th>
                                             <th>pass_usuario</th>
                                             <th>Estado</th>
+                                            <th>Rol</th>
                                             <th>Modificar</th>
                                         </tr>
                                     </thead>
@@ -452,38 +460,43 @@
                                             <th>Nombre_Usuario</th>
                                             <th>pass_usuario</th>
                                             <th>Estado</th>
+                                            <th>Rol</th>
                                             <th>Modificar</th>
                                         </tr>
                                     </tfoot>
-                                    <?php foreach ($data as $usuario) : ?>
+                                    <?php foreach ($data as $usuario) :
+                                       foreach ( $usuario -> roles as $rolesU):
+                                        if($rolesU->id == 1){
+
+                                    ?>
+                                        
                                     <tbody>
                                         <tr>
                                             <td><?= $usuario->nombre?></td>
                                             <td><?= $usuario->apellido?></td>
                                             <td><?= $usuario->email?></td>
                                             <td><?= $usuario->celular?></td>
-                                            <td><?= $usuario->password?></td>
                                             <td><?= $usuario->username?></td>
-                                            <td>activo</td>
+                                            <td><?= $usuario->password?></td>
+                                            <td><?= $usuario->estado?></td>
+                                            <td><?php echo $rolesU->nombreRol
+                                             /*foreach ( $usuario -> roles as $rolesU):
+                                                echo $rolesU->nombreRol;
+                                            endforeach;*/
+                                             ?>
+                                             
+                                            </td>
                                             <td class="botones-tabla">
                                                 <a href="#"><i class="fas fa-pencil-alt"></i></a>
                                                 <a href="#"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
-                                    <?php endforeach ?>	
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>correo2@hotmail.com</td>
-                                            <td>613537664</td>
-                                            <td>usuario2</td>
-                                            <td>pass2</td>
-                                            <td>activo</td>
-                                            <td class="botones-tabla">
-                                                <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
+                                    <?php 
+                                        }
+                                        
+                                        endforeach; 
+                                    endforeach ?>	
+                                        
                                         
                                         
                                     </tbody>

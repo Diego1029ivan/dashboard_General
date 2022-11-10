@@ -1,3 +1,28 @@
+<?php
+    
+    $urlapi="http://localhost:75/api/";
+	$curl = curl_init();
+
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => $urlapi.'usuarios',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'GET',
+    ));
+	$response = curl_exec($curl);
+	curl_close($curl);
+	$data = json_decode($response); 
+
+
+    //var_dump($data);
+    //echo($roles); 
+    //die;
+    //var_dump($data);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -412,7 +437,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                <thead>
                                         <tr>
                                             <th>Nombres</th>
                                             <th>Apellidos</th>
@@ -421,6 +446,7 @@
                                             <th>Nombre_Usuario</th>
                                             <th>pass_usuario</th>
                                             <th>Estado</th>
+                                            <th>Rol</th>
                                             <th>Modificar</th>
                                         </tr>
                                     </thead>
@@ -433,36 +459,37 @@
                                             <th>Nombre_Usuario</th>
                                             <th>pass_usuario</th>
                                             <th>Estado</th>
+                                            <th>Rol</th>
                                             <th>Modificar</th>
                                         </tr>
                                     </tfoot>
+                                    <?php foreach ($data as $usuario) :
+                                       foreach ( $usuario -> roles as $rolesU):
+                                        if($rolesU->id == 2){
+
+                                    ?>
+                                        
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>correo1@hotmail.com</td>
-                                            <td>613537664</td>
-                                            <td>usuario1</td>
-                                            <td>pass1</td>
-                                            <td>activo</td>
+                                            <td><?= $usuario->nombre?></td>
+                                            <td><?= $usuario->apellido?></td>
+                                            <td><?= $usuario->email?></td>
+                                            <td><?= $usuario->celular?></td>
+                                            <td><?= $usuario->username?></td>
+                                            <td><?= $usuario->password?></td>
+                                            <td><?= $usuario->estado?></td>
+                                            <td><?php echo $rolesU->nombreRol?></td>
                                             <td class="botones-tabla">
                                                 <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="./crud/eliminar.php?id=<?php echo $usuario->id?>" onclick="return confirm('Estás seguro que deseas eliminar el usuario?'); "><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>correo2@hotmail.com</td>
-                                            <td>613537664</td>
-                                            <td>usuario2</td>
-                                            <td>pass2</td>
-                                            <td>activo</td>
-                                            <td class="botones-tabla">
-                                                <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
+                                    <?php 
+                                        }
+                                        
+                                        endforeach; 
+                                    endforeach ?>	
+                                        
                                         
                                         
                                     </tbody>
