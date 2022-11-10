@@ -74,8 +74,10 @@ form input{
     margin-top: 10px;
 }
 
-.contenedor .derecha{
+.contenedor .derechab{
     width: 40%;
+    background-image: url(../img/bar.jpg);
+    background-size: cover;
     align-items: center;
     display: flex;
     animation-duration: 1s;
@@ -94,8 +96,57 @@ form input{
     
   }
 }
+.contenedor .derechap{
+  width: 40%;
+  background-image: url(../img/pis1.jpg);
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  animation-duration: 1s;
+  animation-name: imgdp;
+  
+}
+@keyframes imgdp {
+0% {
+  margin-left: 100%;
+  
+}
+
+100% {
+  margin-left: 0%;
+  
+  
+}
+
+
+}
+
+
+.contenedor .derechac{
+  width: 40%;
+  background-image: url(../img/cochera.jpg);
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  animation-duration: 1s;
+  animation-name: imgdp;
+  
+}
+@keyframes imgdp {
+0% {
+  margin-left: 100%;
+  
+}
+
+100% {
+  margin-left: 0%;
+  
+  
+}
+}
 .contenedor .derecha2{
   width: 40%;
+  
   align-items: center;
   display: none !important;
   
@@ -115,13 +166,13 @@ form input{
     
   }
 }
-.derecha img{
+/*.derecha img{
   width: 100%;
   padding: 20px 20px;
   
   
   
-}
+}*/
 
 
 .derecha2 img{
