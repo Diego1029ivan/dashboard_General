@@ -463,13 +463,14 @@
                                             <th>Modificar</th>
                                         </tr>
                                     </tfoot>
+                                    
+                                        
+                                    <tbody>
                                     <?php foreach ($data as $usuario) :
                                        foreach ( $usuario -> roles as $rolesU):
                                         if($rolesU->id == 2){
 
                                     ?>
-                                        
-                                    <tbody>
                                         <tr>
                                             <td><?= $usuario->nombre?></td>
                                             <td><?= $usuario->apellido?></td>

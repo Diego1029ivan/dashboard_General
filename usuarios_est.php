@@ -62,7 +62,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
-                   <img src="/img/mundo.png" alt="">
+                   <img src="./img/mundo.png" alt="">
                 </div>
                 <div class="sidebar-brand-text mx-3">Usuarios Hotel</div>
             </a>
@@ -464,13 +464,14 @@
                                             <th>Modificar</th>
                                         </tr>
                                     </tfoot>
+                                    
+                                        
+                                    <tbody>
                                     <?php foreach ($data as $usuario) :
                                        foreach ( $usuario -> roles as $rolesU):
                                         if($rolesU->id == 1){
 
                                     ?>
-                                        
-                                    <tbody>
                                         <tr>
                                             <td><?= $usuario->nombre?></td>
                                             <td><?= $usuario->apellido?></td>
@@ -488,7 +489,7 @@
                                             </td>
                                             <td class="botones-tabla">
                                             <a href="./crud/editarusuario_user.php?id=<?php echo $usuario->id?>"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="./crud/eliminarusuario.php?id=<?php echo $usuario->id?>" onclick="return confirm('Estás seguro que deseas eliminar el usuario?'); "><i class="fas fa-trash-alt"></i></a>
+                                                <a href="./crud/eliminarusuario_user.php?id=<?php echo $usuario->id?>" onclick="return confirm('Estás seguro que deseas eliminar el usuario?'); "><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     <?php 
