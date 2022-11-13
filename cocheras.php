@@ -1,29 +1,4 @@
-<?php
-    
-    $urlapi="http://localhost:75/api/";
-	$curl = curl_init();
 
-    curl_setopt_array($curl, array(
-      CURLOPT_URL => $urlapi.'hoteles',
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_ENCODING => '',
-      CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 0,
-      CURLOPT_FOLLOWLOCATION => true,
-      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => 'GET',
-    ));
-	$response = curl_exec($curl);
-	curl_close($curl);
-	$data = json_decode($response); 
-
-    
-
-    //var_dump($data);
-    //echo($roles); 
-    //die;
-    //var_dump($data);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +37,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-        <i class="fal fa-house-signal"></i>
+        <i class="fas fa-parking-circle"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Listado de los Hoteles</div>
       </a>
@@ -111,30 +86,29 @@
         <div id="collapseHotel" class="collapse show" aria-labelledby="headingHotel" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Contenido Hoteles:</h6>
-            <a class="collapse-item active"  href="hoteles.php">Lista de Hoteles</a>
-            <a class="collapse-item" href="piscinas.php">Servicio de Pisicina</a>
+            <a class="collapse-item" href="hoteles.php">Lista de Hoteles</a>
+            <a class="collapse-item " href="piscinas.php">Servicio de Pisicina</a>
             <a class="collapse-item" href="bares.php">Servicio de Bar</a>
-            <a class="collapse-item" href="cocheras.php">Servicio de cochera</a>
+            <a class="collapse-item active" href="cocheras.php">Servicio de cochera</a>
           </div>
         </div>
       </li>
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="reservas.php" >
-              <i class="fas fa-calendar-day"></i>
-              <span>Reservas</span>
-          </a>
-          
-      </li>
+    <a class="nav-link collapsed" href="reservas.php" >
+        <i class="fas fa-calendar-day"></i>
+        <span>Reservas</span>
+    </a>
+    
+</li>
 
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="testimonios.php" >
-              <i class="fas fa-comments"></i>
-              <span>Testimonios</span>
-          </a>
-          
-      </li>
-      
+<li class="nav-item">
+    <a class="nav-link collapsed" href="testimonios.php" >
+        <i class="fas fa-comments"></i>
+        <span>Testimonios</span>
+    </a>
+    
+</li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -405,55 +379,30 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabla de Hoteles</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabla de las Cocheras</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nombres</th>
-                      <th>Ruc</th>
-                      <th>Total de habitacion</th>
-                      <th>Description</th>
-                      <th>logo</th> 
-                        <th>Cuidad</th> 
-                        <th>Imagen</th>                
-                      <th>Modificar</th>
+                      <th>Id Cochera</th>
+                      <th>Nombre del Hotel</th>
+                      <th>Descripción del Hotel</th>
+                      <th>Imágen</th>
+                      
                     </tr>
                   </thead>
              
                 <tbody>
-                    <?php foreach ($data as $hotel):  ?>
+                    
                     <tr>
-                      <td>
-                        <?= $hotel->nombre?>
-                      </td>
-                      <td>
-                        <?= $hotel->ruc?>
-                      </td>
-                      <td>
-                        <?= $hotel->cantidadHabitacion?>
-                      </td>
-                      <td>
-                        <?= $hotel->descripcionHotel?>
-                      </td>
-                      <td>
-                       <img src="http://localhost:75/api/uploads/img/<?=$hotel->logo?>" alt="<?=$hotel->logo?>"  style="width: 80px;"/>
-                      </td>
-                        <td>
-                        <?= $hotel->ubicacion ->ciudad?>
-                      </td>
-                        <td style="text-align: center;">
-                       <img src="http://localhost:75/api/uploads/img/<?=$hotel->ubicacion->fotoCiudad?>" alt="<?=$hotel->ubicacion->fotoCiudad?>"  style="width: 100px;"/>
-                      </td>
-                      
-                      <td class="botones-tabla">
-                                                <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="./crud/eliminarHoteles.php?id=<?php echo $hotel->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
-                        </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                     </tr>
-                   <?php endforeach ?>	                                                     
+                                                                        
                   </tbody>
                 </table>
               </div>

@@ -112,50 +112,30 @@
                 <div id="collapseHotel" class="collapse" aria-labelledby="headingHotel"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Contenido Hoteles:</h6>
-                        <a class="collapse-item" href="hoteles.php">Lista de Hoteles</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    <h6 class="collapse-header">Contenido Hoteles:</h6>
+                    <a class="collapse-item" href="hoteles.php">Lista de Hoteles</a>
+                    <a class="collapse-item " href="piscinas.php">Servicio de Pisicina</a>
+                    <a class="collapse-item" href="bares.php">Servicio de Bar</a>
+                    <a class="collapse-item" href="cocheras.php">Servicio de cochera</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReserva"
-                    aria-expanded="true" aria-controls="collapseReserva">
-                    <i class="fas fa-calendar-day"></i>
-                    <span>Reservas</span>
-                </a>
-                <div id="collapseReserva" class="collapse" aria-labelledby="headingReserva"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
+        <a class="nav-link collapsed" href="reservas.php" >
+            <i class="fas fa-calendar-day"></i>
+            <span>Reservas</span>
+        </a>
+    
+    </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTest"
-                    aria-expanded="true" aria-controls="collapseTest">
-                    <i class="fas fa-comments"></i>
-                    <span>Testimonios</span>
-                </a>
-                <div id="collapseTest" class="collapse" aria-labelledby="headingTest"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="testimonios.php" >
+          <i class="fas fa-comments"></i>
+          <span>Testimonios</span>
+      </a>
+    
+    </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
