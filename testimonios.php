@@ -77,8 +77,8 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHotel" aria-expanded="true"
+      <li class="nav-item ">
+        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseHotel" aria-expanded="true"
           aria-controls="collapseHotel">
           <i class="fas fa-hotel"></i>
           <span>Hoteles</span>
@@ -102,7 +102,7 @@
     
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link collapsed show" href="testimonios.php" >
           <i class="fas fa-comments"></i>
           <span>Testimonios</span>
