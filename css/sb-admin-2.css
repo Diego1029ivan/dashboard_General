@@ -10461,7 +10461,9 @@ a:focus {
 }
 
 .sidebar .sidebar-brand .sidebar-brand-icon img{
-  width: 80%;
+  width:50px;
+  background-color: #fff;
+  border-radius: 5px;
   
 }
 

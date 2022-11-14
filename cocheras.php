@@ -19,7 +19,7 @@
     rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -36,10 +36,10 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon">
-        <i class="fas fa-parking-circle"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Listado de los Hoteles</div>
+            <div class="sidebar-brand-icon">
+              <img src="img/estacionamiento.png" alt="estacionamiento.png">
+            </div>
+        <div class="sidebar-brand-text mx-3">Cocheras</div>
       </a>
 
       <!-- Divider -->

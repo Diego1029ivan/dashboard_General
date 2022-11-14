@@ -1,31 +1,5 @@
 <?php include './componentes/llamar_reserva.php'; ?>
 <?php include './componentes/llamar_testimonio.php'; ?>
-<?php
-    
-    $urlapi="http://localhost:75/api/";
-	$curl = curl_init();
-
-    curl_setopt_array($curl, array(
-      CURLOPT_URL => $urlapi.'hoteles',
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_ENCODING => '',
-      CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 0,
-      CURLOPT_FOLLOWLOCATION => true,
-      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => 'GET',
-    ));
-	$response = curl_exec($curl);
-	curl_close($curl);
-	$data = json_decode($response); 
-
-    
-
-    //var_dump($data);
-    //echo($roles); 
-    //die;
-    //var_dump($data);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,9 +38,9 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-        <i class="fal fa-house-signal"></i>
+          <img src="./img/mapah.png" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">Listado de los Hoteles</div>
+        <div class="sidebar-brand-text mx-3">Reservas</div>
       </a>
 
       <!-- Divider -->
@@ -104,39 +78,38 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHotel" aria-expanded="true"
+      <li class="nav-item ">
+        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseHotel" aria-expanded="true"
           aria-controls="collapseHotel">
           <i class="fas fa-hotel"></i>
           <span>Hoteles</span>
         </a>
-        <div id="collapseHotel" class="collapse show" aria-labelledby="headingHotel" data-parent="#accordionSidebar">
+        <div id="collapseHotel" class="collapse " aria-labelledby="headingHotel" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Contenido Hoteles:</h6>
-            <a class="collapse-item active"  href="hoteles.php">Lista de Hoteles</a>
-            <a class="collapse-item" href="piscinas.php">Servicio de Pisicina</a>
+            <a class="collapse-item" href="hoteles.php">Lista de Hoteles</a>
+            <a class="collapse-item " href="piscinas.php">Servicio de Pisicina</a>
             <a class="collapse-item" href="bares.php">Servicio de Bar</a>
             <a class="collapse-item" href="cocheras.php">Servicio de cochera</a>
           </div>
         </div>
       </li>
 
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="reservas.php" >
-              <i class="fas fa-calendar-day"></i>
-              <span>Reservas</span>
-          </a>
-          
-      </li>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="reservas.php" >
+            <i class="fas fa-calendar-day"></i>
+            <span>Reservas</span>
+        </a>
+    
+    </li>
 
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="testimonios.php" >
-              <i class="fas fa-comments"></i>
-              <span>Testimonios</span>
-          </a>
-          
-      </li>
-      
+    <li class="nav-item ">
+      <a class="nav-link collapsed show" href="testimonios.php" >
+          <i class="fas fa-comments"></i>
+          <span>Testimonios</span>
+      </a>
+    
+    </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -295,55 +268,41 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabla de Hoteles</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabla de Testimonio</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nombres</th>
-                      <th>Ruc</th>
-                      <th>Total de habitacion</th>
-                      <th>Description</th>
-                      <th>logo</th> 
-                        <th>Cuidad</th> 
-                        <th>Imagen</th>                
-                      <th>Modificar</th>
+                      <th>Id Reserva</th>
+                      <th>Adelanto</th>
+                      <th>Fecha entrada</th>
+                      <th>Fecha de salida</th>
+                      <th>Selección de Hotel</th>
+                      <th>Usuario</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                      
                     </tr>
                   </thead>
              
                 <tbody>
-                    <?php foreach ($data as $hotel):  ?>
+                <?php foreach ($data_reserv as $reserva):  ?>
                     <tr>
-                      <td>
-                        <?= $hotel->nombre?>
-                      </td>
-                      <td>
-                        <?= $hotel->ruc?>
-                      </td>
-                      <td>
-                        <?= $hotel->cantidadHabitacion?>
-                      </td>
-                      <td>
-                        <?= $hotel->descripcionHotel?>
-                      </td>
-                      <td>
-                       <img src="http://localhost:75/api/uploads/img/<?=$hotel->logo?>" alt="<?=$hotel->logo?>"  style="width: 80px;"/>
-                      </td>
-                        <td>
-                        <?= $hotel->ubicacion ->ciudad?>
-                      </td>
-                        <td style="text-align: center;">
-                       <img src="http://localhost:75/api/uploads/img/<?=$hotel->ubicacion->fotoCiudad?>" alt="<?=$hotel->ubicacion->fotoCiudad?>"  style="width: 100px;"/>
-                      </td>
-                      
+                      <td><?= $reserva->id?></td>
+                      <td><?= $reserva->adelantoReservas?></td>
+                      <td><?= date_format(date_create_from_format('Y-m-d',$reserva->fechaEntrada),'d-m-Y')?></td>
+                      <td><?= date_format(date_create_from_format('Y-m-d',$reserva->fechaSalida),'d-m-Y')?></td>
+                      <td><?= $reserva->hotel->nombre?></td>
+                      <td><?= $reserva->usuario->nombre?></td>
+                      <td><?= $reserva->estado?></td>
                       <td class="botones-tabla">
-                                                <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="./crud/eliminarHoteles.php?id=<?php echo $hotel->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
-                        </td>
+                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="./crud/eliminarHoteles.php?id=<?php echo $reserva->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
+                      </td>
                     </tr>
-                   <?php endforeach ?>	                                                     
+                <?php endforeach ?>	                                                      
                   </tbody>
                 </table>
               </div>

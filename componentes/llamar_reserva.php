@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://localhost:75/api/testimonio',
+  CURLOPT_URL => 'http://localhost:75/api/reserva',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -16,8 +16,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-//echo ($response);
-$data_test = json_decode($response); 
-$data2_test= array_slice((array_reverse($data_test)),0,3);
+//echo $response;
+$data_reserv = json_decode($response); 
+$data2_reserv= array_slice((array_reverse($data_reserv)),0,3);
+
 }
 ?>
