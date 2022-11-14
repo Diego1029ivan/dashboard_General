@@ -54,7 +54,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter"><?php echo(count($data))  ?></span>
+                <span class="badge badge-danger badge-counter"><?php echo(count($data_test))  ?></span>
               </a>
               <!-- Dropdown - Messages -->
 
@@ -64,7 +64,7 @@
                 <h6 class="dropdown-header">
                   Centro de Testimonios
                 </h6>
-                <?php foreach ($data2 as $testimonio):  ?>
+                <?php foreach ($data2_test as $testimonio):  ?>
 
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">

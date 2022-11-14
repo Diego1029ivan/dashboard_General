@@ -15,9 +15,9 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 
-//curl_close($curl);
-echo ($response);
-$data = json_decode($response); 
-$data2= array_slice((array_reverse($data)),0,3);
+curl_close($curl);
+//echo ($response);
+$data_test = json_decode($response); 
+$data2_test= array_slice((array_reverse($data_test)),0,3);
 
 ?>
