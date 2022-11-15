@@ -130,9 +130,11 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <a  data-toggle="modal" data-target="#reporteModal" href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reportes</a>
                     </div>
+
+                   
 
                     <!-- Content Row -->
                     <div class="row">
@@ -494,6 +496,51 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Logout Modal para fecha-->
+     <div class="modal fade" id="reporteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Especificar las fechas:</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <form action="./componentes/mostrarReporte.php" class="user" method="get" >
+                            
+                                                      
+                            <div class="form-group row">
+                                
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label>fecha Inicio</label>
+                                    <input name="fechaInicio"  type="date" class="form-control form-control-user" >
+                                    
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Fecha Fin</label>
+                                    <input name="fechaFin" type="date" class="form-control form-control-user">
+                                   
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Generar reporte
+                            </button>
+                            
+                           
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="http://localhost:75/reporte/reservas/download?fechaInicio=2010-05-10&fechaFin=2022-12-12&tipo=PDF'" >Generar Completo</a>
                 </div>
             </div>
         </div>
