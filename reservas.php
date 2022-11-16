@@ -297,7 +297,15 @@
                       <td><?= date_format(date_create_from_format('Y-m-d',$reserva->fechaSalida),'d-m-Y')?></td>
                       <td><?= $reserva->hotel->nombre?></td>
                       <td><?= $reserva->usuario->nombre?></td>
-                      <td><?= $reserva->estado?></td>
+                      <td><?php if ($reserva->estado == 1){ ?>
+                        <button class="btn btn-success" >Activo</button>                     
+                      <?php }else if($reserva->estado == 2){?>
+                        <button class="btn btn-warning">En Espera</button>
+                        
+                       <?php }?> 
+                        
+                        
+                      </td>
                       <td class="botones-tabla">
                       <a href="./crud/crudReserva/editar_reserva.php?id=<?php echo $reserva->id?>"><i class="fas fa-pencil-alt"></i></a>
                       <a href="./crud/crudReserva/eliminar_reserva.php?id=<?php echo $reserva->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
