@@ -105,6 +105,7 @@
             <a class="collapse-item" href="form_piscina.html">Formulario Piscina</a>
             <a class="collapse-item" href="form_cochera.html">Formulario Cochera</a>
             <a class="collapse-item" href="form_bar.html">Formulario Bar</a>
+            <a class="collapse-item" href="form_galeria.html">Formulario galeria</a>
             
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>

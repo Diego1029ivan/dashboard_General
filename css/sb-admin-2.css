@@ -10884,6 +10884,11 @@ a:focus {
   
   background-size: cover;
 }
+.bg-registrogale-image{
+  background-image: url("../img/gale.jpg");
+  
+  background-size: cover;
+}
 
 .bg-registrocochera-image{
   background-image: url("../img/cochera.jpg");
