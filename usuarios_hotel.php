@@ -118,6 +118,7 @@
                     <a class="collapse-item " href="piscinas.php">Servicio de Pisicina</a>
                     <a class="collapse-item" href="bares.php">Servicio de Bar</a>
                     <a class="collapse-item" href="cocheras.php">Servicio de cochera</a>
+                    <a class="collapse-item" href="ubicaciones.php">Ubicaciones</a>    
                     </div>
                 </div>
             </li>

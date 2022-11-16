@@ -1,5 +1,5 @@
-<?php include './componentes/llamar_reserva.php'; ?>
-<?php include './componentes/llamar_testimonio.php'; ?>
+
+<?php include './crud/crudUbicaciones/llamar_ubicacion.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard-Hotele</title>
+  <title>Dashboard-Hoteles</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,9 +38,9 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="./img/mapah.png" alt="">
+        <img src="img/firmar.png" alt="bar.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Reservas</div>
+        <div class="sidebar-brand-text mx-3">Bares</div>
       </a>
 
       <!-- Divider -->
@@ -78,39 +78,39 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item ">
-        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseHotel" aria-expanded="true"
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHotel" aria-expanded="true"
           aria-controls="collapseHotel">
           <i class="fas fa-hotel"></i>
           <span>Hoteles</span>
         </a>
-        <div id="collapseHotel" class="collapse " aria-labelledby="headingHotel" data-parent="#accordionSidebar">
+        <div id="collapseHotel" class="collapse show" aria-labelledby="headingHotel" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Contenido Hoteles:</h6>
             <a class="collapse-item" href="hoteles.php">Lista de Hoteles</a>
             <a class="collapse-item " href="piscinas.php">Servicio de Pisicina</a>
-            <a class="collapse-item" href="bares.php">Servicio de Bar</a>
+            <a class="collapse-item " href="bares.php">Servicio de Bar</a>
             <a class="collapse-item" href="cocheras.php">Servicio de cochera</a>
-            <a class="collapse-item" href="ubicaciones.php">Ubicaciones</a>
+            <a class="collapse-item active" href="ubicaciones.php">Ubicaciones</a>
           </div>
         </div>
       </li>
 
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="reservas.php" >
-            <i class="fas fa-calendar-day"></i>
-            <span>Reservas</span>
-        </a>
+      <li class="nav-item">
+    <a class="nav-link collapsed" href="reservas.php" >
+        <i class="fas fa-calendar-day"></i>
+        <span>Reservas</span>
+    </a>
     
-    </li>
+</li>
 
-    <li class="nav-item ">
-      <a class="nav-link collapsed show" href="testimonios.php" >
-          <i class="fas fa-comments"></i>
-          <span>Testimonios</span>
-      </a>
+<li class="nav-item">
+    <a class="nav-link collapsed" href="testimonios.php" >
+        <i class="fas fa-comments"></i>
+        <span>Testimonios</span>
+    </a>
     
-    </li>
+</li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -222,7 +222,119 @@
             </li>
 
             <!-- Nav Item - Alerts -->
-            <?php include './componentes/barra_alerta.php'; ?>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Centro de Alertas
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Centro de Mensajes
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                      problem I've been having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how
+                      would you like them sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with
+                      the progress so far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                      told me that people say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -269,41 +381,36 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabla de Testimonio</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabla de Bares</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Id Reserva</th>
-                      <th>Adelanto</th>
-                      <th>Fecha entrada</th>
-                      <th>Fecha de salida</th>
-                      <th>Selección de Hotel</th>
-                      <th>Usuario</th>
-                      <th>Estado</th>
+                      <th>Id Ubicación</th>
+                      <th>País</th>
+                      <th>Ciudad</th>
+                      <th>Descripción</th>
+                      <th>Foto Ciudad</th>
                       <th>Acciones</th>
                       
                     </tr>
                   </thead>
              
                 <tbody>
-                <?php foreach ($data_reserv as $reserva):  ?>
+                    <?php foreach ($data_ubi as $ubicacion):  ?>
                     <tr>
-                      <td><?= $reserva->id?></td>
-                      <td><?= $reserva->adelantoReservas?></td>
-                      <td><?= date_format(date_create_from_format('Y-m-d',$reserva->fechaEntrada),'d-m-Y')?></td>
-                      <td><?= date_format(date_create_from_format('Y-m-d',$reserva->fechaSalida),'d-m-Y')?></td>
-                      <td><?= $reserva->hotel->nombre?></td>
-                      <td><?= $reserva->usuario->nombre?></td>
-                      <td><?= $reserva->estado?></td>
-                      <td class="botones-tabla">
-                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="./crud/eliminarHoteles.php?id=<?php echo $reserva->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
+                      <td><?= $ubicacion->id?></td>
+                      <td><?= $ubicacion->pais?></td>
+                      <td><?= $ubicacion->ciudad?></td>
+                      <td><?= $ubicacion->descripcionCiudad?></td>
+                      <td><img src="http://localhost:75/api/uploads/img/<?=$ubicacion->fotoCiudad?>" alt="<?=$ubicacion->fotoCiudad?>"  style="width: 80px;"/></td>
+                      <td> <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                           <a href="./crud/eliminarUbicaciones.php?id=<?php echo $ubicacion->id?>" onclick="return confirm('Estás seguro que deseas eliminar la Ubicación?'); "><i class="fas fa-trash-alt"></i></a>
                       </td>
                     </tr>
-                <?php endforeach ?>	                                                      
+                    <?php endforeach ?>	                                                 
                   </tbody>
                 </table>
               </div>

@@ -10167,6 +10167,11 @@ a:focus {
   width: 2rem;
 }
 
+.container form .form-group img{
+  height: 5rem;
+  width: 5rem;
+}
+
 .topbar {
   height: 4.375rem;
 }
@@ -10887,6 +10892,12 @@ a:focus {
 }
 .bg-registropis-image{
   background-image: url("../img/pis1.jpg");
+  
+  background-size: cover;
+}
+
+.bg-registrohotel-image{
+  background-image: url("../img/h4.jpg");
   
   background-size: cover;
 }

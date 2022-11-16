@@ -6,9 +6,9 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
     <div class="sidebar-brand-icon ">
-    <i class="fas fa-hryvnia"></i>
+        <img src="./img/logo3.png" alt="">
     </div>
-    <div class="sidebar-brand-text mx-3">Nombre de Hoteles</div>
+    
 </a>
 
 <!-- Divider -->
@@ -60,6 +60,7 @@
             <a class="collapse-item" href="piscinas.php">Servicio de Pisicina</a>
             <a class="collapse-item" href="bares.php">Servicio de Bar</a>
             <a class="collapse-item" href="cocheras.php">Servicio de cochera</a>
+            <a class="collapse-item" href="ubicaciones.php">Ubicaciones</a>
         </div>
     </div>
 </li>
@@ -100,7 +101,7 @@
             <h6 class="collapse-header">Login Screens:</h6>
             <a class="collapse-item" href="login.html">Login</a>
             <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="form_hotel.html">Formulario Hotel</a>
+            <a class="collapse-item" href="form_hotelnuevo.html">Formulario Hotel</a>
             <a class="collapse-item" href="form_piscina.html">Formulario Piscina</a>
             <a class="collapse-item" href="form_cochera.html">Formulario Cochera</a>
             <a class="collapse-item" href="form_bar.html">Formulario Bar</a>
