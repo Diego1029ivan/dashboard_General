@@ -38,7 +38,12 @@
                                 
                                     <div class="form-group">
                                         <label>Foto del Bar</label>
-                                        <input type="file" class="form-control-file" id="exampleInputPassword1" placeholder="Subir Foto">
+                                        <input type="file" class="form-control-file"  placeholder="Subir Foto" onchange="previewImage(event, '#imgPreview')">
+                                            
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Previsualización de la img</label>
+                                        <img id="imgPreview">
                                             
                                     </div>
                                     
@@ -66,7 +71,7 @@
             </div>
         </div>
     
-        
+        <script src="js/script.js"></script>
     
     
 </body>

@@ -299,8 +299,8 @@
                       <td><?= $reserva->usuario->nombre?></td>
                       <td><?= $reserva->estado?></td>
                       <td class="botones-tabla">
-                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="./crud/eliminarHoteles.php?id=<?php echo $reserva->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
+                      <a href="./crud/crudReserva/editar_reserva.php?id=<?php echo $reserva->id?>"><i class="fas fa-pencil-alt"></i></a>
+                      <a href="./crud/crudReserva/eliminar_reserva.php?id=<?php echo $reserva->id?>" onclick="return confirm('Estás seguro que deseas eliminar el Hotel?'); "><i class="fas fa-trash-alt"></i></a>
                       </td>
                     </tr>
                 <?php endforeach ?>	                                                      

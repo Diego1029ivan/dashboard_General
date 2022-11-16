@@ -38,10 +38,14 @@
                             
                                 <div class="form-group">
                                     <label>Foto de la Piscina</label>
-                                    <input type="file" class="form-control-file" placeholder="Subir Foto">
+                                    <input type="file" class="form-control-file" placeholder="Subir Foto" onchange="previewImage(event, '#imgPreview')">
                                         
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label>Previsualización de la img</label>
+                                    <img id="imgPreview">
+                                        
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Descripción de la Piscina</label>
                                     <textarea type="textarea" class="form-control"   placeholder="descripción de la Piscina" rows="3"></textarea>
@@ -66,7 +70,7 @@
         </div>
     </div>
 
-    
+    <script src="js/script.js"></script>
 
 
 </body>
