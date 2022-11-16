@@ -300,7 +300,7 @@
                       <td><?php if ($reserva->estado == 1){ ?>
                         <button class="btn btn-success" >Activo</button>                     
                       <?php }else if($reserva->estado == 2){?>
-                        <button class="btn btn-warning">En Espera</button>
+                        <button class="btn btn-warning">Espera</button>
                         
                        <?php }?> 
                         
