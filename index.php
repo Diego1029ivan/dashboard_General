@@ -1,6 +1,33 @@
 <?php include './componentes/llamar_testimonio.php'; ?>
 <?php include './componentes/llamar_reserva.php'; ?>
+<?php  //var_dump($data_reserv)
 
+
+$arregloYearPHP=[];
+$arregloYear=[];
+$arraySinDuplicados=[];
+
+foreach ($data_reserv as $res) :
+
+    array_push($arregloYearPHP, intval(substr($res->fechaEntrada,0,4)));
+endforeach;
+
+/* Modificar el array de fechas para colocar en nuevo aray de nuevo INDEX */
+foreach($arregloYearPHP as $elemento) {
+    if (!in_array($elemento, $arraySinDuplicados)) {
+        $arraySinDuplicados[] = $elemento;
+    }
+};
+
+
+
+$arregloYear=array_unique($arregloYearPHP);
+var_dump($arregloYear);
+var_dump($arraySinDuplicados);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -244,17 +271,18 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Reservas por Hoteles</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <?php for ($i=0; $i < count($arraySinDuplicados) ; $i++) { ?>
+                                                                                            
+                                            <a class="dropdown-item" href="#"><?php echo $arraySinDuplicados[$i] ?></a>
+                                            
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas id="myAreaReserva"></canvas>
+                                        <canvas id="myAreaReserva<?php echo $arregloYear[0]?>" class="active"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +324,7 @@
                     <!-- Content Row -->
                     <div class="row">
                         <!-- Area Chart -->
-                        <div class="col ">
+                        <div class="col-lg-6 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div

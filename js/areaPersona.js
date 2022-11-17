@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 
 $.ajax(settings).done(function (response) {
-  console.log(response)
+  //console.log(response)
   //console.log(Element.fechaEntrada)
   let cantEne =0,cantFeb=0,cantMar=0,cantAbr=0,cantMay=0,cantJun=0,cantJul=0,cantAgo=0
   let cantSet=0,cantOct=0,cantNov=0,cantDic=0

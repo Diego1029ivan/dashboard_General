@@ -22,7 +22,7 @@ $.ajax(settings).done(function (response) {
   };
 
   $.ajax(settingsh).done(function (response_hotel) {
-    console.log(response_hotel);
+    //console.log(response_hotel);
 
   let nombre_hoteles=[];
 

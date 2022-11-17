@@ -11,69 +11,114 @@ var settings = {
 };
 
 $.ajax(settings).done(function (response) {
-console.log(response)
+//console.log(response)
 //console.log(Element.fechaEntrada)
 let cantEne =0,cantFeb=0,cantMar=0,cantAbr=0,cantMay=0,cantJun=0,cantJul=0,cantAgo=0
 let cantSet=0,cantOct=0,cantNov=0,cantDic=0
 
 let pagoEnero=0,pagoFeb=0,pagoMar=0,pagoAbr=0,pagoMay=0,pagoJun=0,pagoJul=0
 let pagoAgo=0,pagoSet=0,pagoOct=0,pagoNov=0,pagoDic=0
- response.forEach(Element=>{
-  console.log(parseInt((Element.fechaEntrada).substr(0,4)))
 
 
-  switch (parseInt((Element.fechaEntrada).substr(5,2))){
-    case 1 :
-    cantEne++;
-    pagoEnero+=Element.adelantoReservas
-    break;
-    case 2 :
-    cantFeb++;
-    pagoFeb+=Element.adelantoReservas
-    break;
-    case 3 :
-    cantMar++;
-    pagoMar+=Element.adelantoReservas
-    break;
-    case 4 :
-    cantAbr++;
-    pagoAbr+=Element.adelantoReservas
-    break;
-    case 5 :
-    cantMay++;
-    pagoMay+=Element.adelantoReservas
-    break;
-    case 6 :
-    cantJun++;
-    pagoJun+=Element.adelantoReservas
-    break;
-    case 7 :
-    cantJul++;
-    pagoJul+=Element.adelantoReservas
-    break;
-    case 8 :
-    cantAgo++;
-    pagoAgo+=Element.adelantoReservas
-    break;
-    case 9 :
-    cantSet++;
-    pagoSet+=Element.adelantoReservas
-    break;
-    case 10 :
-    cantOct++;
-    pagoOct+=Element.adelantoReservas
-    break;
-    case 11 :
-    cantNov++;
-    pagoNov+=Element.adelantoReservas
-    break;
-    case 12 :
-    cantDic++;
-    pagoDic+=Element.adelantoReservas
-    break;
-  }
+/* IDENTIFICAR AÑOS ÚNICOS */
+let arregloYear =[]
 
- })
+response.forEach(ElementYear=>{
+
+  arregloYear.push(parseInt((ElementYear.fechaEntrada).substr(0,4)))
+})
+
+let result_unico = arregloYear.filter((item,index)=>{
+  return arregloYear.indexOf(item) === index;
+})
+console.log(result_unico);
+
+
+/* CREAR ARREGLOS POR AÑO */
+let arregloR=[]
+for (let j = 0; j < result_unico.length; j++) {
+ // const element = array[j];
+  eval("var pagoEnero"+j+"=0")
+  eval("var pagoFeb"+j+"=0")
+  eval("var pagoMar"+j+"=0")
+  eval("var pagoAbr"+j+"=0")
+  eval("var pagoMay"+j+"=0")
+  eval("var pagoJun"+j+"=0")
+  eval("var pagoJul"+j+"=0")
+  eval("var pagoAgo"+j+"=0")
+  eval("var pagoSet"+j+"=0")
+  eval("var pagoOct"+j+"=0")
+  eval("var pagoNov"+j+"=0")
+  eval("var pagoDic"+j+"=0")
+
+    response.forEach(Element=>{
+
+        //arregloYear.push(parseInt((Element.fechaEntrada).substr(0,4)))
+      if (parseInt((Element.fechaEntrada).substr(0,4))==result_unico[j]) {
+        
+
+            switch (parseInt((Element.fechaEntrada).substr(5,2))){
+              case 1 :
+              //cantEne++;
+              eval("pagoEnero"+j+"+=Element.adelantoReservas")
+              break;
+              case 2 :
+              //cantFeb++;
+              eval("pagoFeb"+j+"+=Element.adelantoReservas")
+              break;
+              case 3 :
+              //cantMar++;
+              eval("pagoMar"+j+"+=Element.adelantoReservas")
+              break;
+              case 4 :
+              //cantAbr++;
+              eval("pagoAbr"+j+"+=Element.adelantoReservas")
+              break;
+              case 5 :
+              //cantMay++;
+              eval("pagoMay"+j+"+=Element.adelantoReservas")
+              break;
+              case 6 :
+              //cantJun++;
+              eval("pagoJun"+j+"+=Element.adelantoReservas")
+              break;
+              case 7 :
+              //cantJul++;
+              eval("pagoJul"+j+"+=Element.adelantoReservas")
+              break;
+              case 8 :
+              //cantAgo++;
+              eval("pagoAgo"+j+"+=Element.adelantoReservas")
+              break;
+              case 9 :
+              //cantSet++;
+              eval("pagoSet"+j+"+=Element.adelantoReservas")
+              break;
+              case 10 :
+              //cantOct++;
+              eval("pagoOct"+j+"+=Element.adelantoReservas")
+              break;
+              case 11 :
+              //cantNov++;
+              eval("pagoNov"+j+"+=Element.adelantoReservas")
+              break;
+              case 12 :
+              //cantDic++;
+              eval("pagoDic"+j+"+=Element.adelantoReservas")
+              break;
+            }
+      }
+    })
+    eval("arregloR"+j+"=[pagoEnero"+j+", pagoFeb"+j+", pagoMar"+j+", pagoAbr"+j+", pagoMay"+j+", pagoJun"+j+", pagoJul"+j+", pagoAgo"+j+", pagoSet"+j+", pagoOct"+j+", pagoNov"+j+", pagoDic"+j+"]")
+}
+
+console.log("arreglos")
+console.log(arregloR0)
+console.log(arregloR1)
+
+
+
+/*IDENTIFICAR EL MAYOR VALOR */
 let arregloReserva=[pagoEnero, pagoFeb, pagoMar, pagoAbr, pagoMay, pagoJun, pagoJul, pagoAgo, pagoSet, pagoOct, pagoNov, pagoDic]
 
  let mayor_reserv = 0
@@ -84,6 +129,8 @@ let arregloReserva=[pagoEnero, pagoFeb, pagoMar, pagoAbr, pagoMay, pagoJun, pago
    }
  }
  
+
+
 
 //console.log(response)
 
@@ -134,7 +181,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: arregloReserva,
+      data: arregloR0,
     }],
   },
   options: {
@@ -204,4 +251,6 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
 });
