@@ -46,10 +46,7 @@ $.ajax(settings).done(function (response) {
     })
     totalHotel.push(eval("nomHotel"+i))
   }
-  console.log(totalHotel)
-  console.log(nombre_hoteles)
-  console.log(nomHotel0)
-  console.log(nomHotel1)
+  
 
   //console.log(nombre_hoteles)
 
@@ -78,7 +75,7 @@ $.ajax(settings).done(function (response) {
             borderWidth: 1,
             xPadding: 15,
             yPadding: 15,
-            displayColors: false,
+            displayColors: true,
             caretPadding: 10,
           },
           legend: {

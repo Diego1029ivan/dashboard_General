@@ -19,7 +19,7 @@ let cantSet=0,cantOct=0,cantNov=0,cantDic=0
 let pagoEnero=0,pagoFeb=0,pagoMar=0,pagoAbr=0,pagoMay=0,pagoJun=0,pagoJul=0
 let pagoAgo=0,pagoSet=0,pagoOct=0,pagoNov=0,pagoDic=0
  response.forEach(Element=>{
-  
+  console.log(parseInt((Element.fechaEntrada).substr(0,4)))
 
 
   switch (parseInt((Element.fechaEntrada).substr(5,2))){
@@ -74,9 +74,16 @@ let pagoAgo=0,pagoSet=0,pagoOct=0,pagoNov=0,pagoDic=0
   }
 
  })
+let arregloReserva=[pagoEnero, pagoFeb, pagoMar, pagoAbr, pagoMay, pagoJun, pagoJul, pagoAgo, pagoSet, pagoOct, pagoNov, pagoDic]
 
-
-
+ let mayor_reserv = 0
+ for(i = 0; i < arregloReserva.length; i++){
+   if (arregloReserva[i] > mayor_reserv)
+   {
+    mayor_reserv = arregloReserva[i];
+   }
+ }
+ 
 
 //console.log(response)
 
@@ -113,7 +120,7 @@ var ctx = document.getElementById("myAreaReserva");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Agos", "Sep", "Oct", "Nov", "Dic"],
     datasets: [{
       label: "Reservas por mes",
       lineTension: 0.3,
@@ -127,7 +134,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [pagoEnero, pagoFeb, pagoMar, pagoAbr, pagoMay, pagoJun, pagoJul, pagoAgo, pagoSet, pagoOct, pagoNov, pagoDic],
+      data: arregloReserva,
     }],
   },
   options: {
@@ -150,16 +157,16 @@ var myLineChart = new Chart(ctx, {
           drawBorder: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 12
         }
       }],
       yAxes: [{
         ticks: {
-          maxTicksLimit: 5,
+          maxTicksLimit: 10,
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return 'S/' + number_format(value);
           }
         },
         gridLines: {
@@ -191,7 +198,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': S/' + number_format(tooltipItem.yLabel);
         }
       }
     }
