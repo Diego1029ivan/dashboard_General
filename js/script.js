@@ -84,3 +84,5 @@ function previewImage(event, querySelector){
 	$imgPreview3.src = objectURL;
                 
 }
+
+

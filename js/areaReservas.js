@@ -158,13 +158,16 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
+let palabra = "myAreaReserva"
+console.log(eval("myAreaReserva"+(result_unico[1])))
+/*MUY INTERESANTE PARA HALLAR EL EVAL COMO FUNCION DE TRAER EL GETLEMENTBYID */
 
-
-
-
+for (let l = 0; l < result_unico.length; l++) {
 // Area Chart Example
-var ctx = document.getElementById("myAreaReserva");
-var myLineChart = new Chart(ctx, {
+
+
+//eval("var ctx"+l+"="+eval("myAreaReserva"+(result_unico[0])));
+var myLineChart = new Chart(eval("myAreaReserva"+(result_unico[l])), {
   type: 'line',
   data: {
     labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Agos", "Sep", "Oct", "Nov", "Dic"],
@@ -181,7 +184,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: arregloR0,
+      data: eval("arregloR"+l),
     }],
   },
   options: {
@@ -250,7 +253,22 @@ var myLineChart = new Chart(ctx, {
       }
     }
   }
-});
+  });
+}
+//////ESCOGER LOS BOTONES DE LAS FECHAS -- LÓGICA ANALÍTICA
+for (let k = 0; k < result_unico.length; k++) {
+  console.log(eval("btn"+(result_unico[k])))
+      eval("btn"+(result_unico[k])).onclick = () =>{
+        alert("hola")
+      for (let m = 0; m < result_unico.length; m++) {
+        
+        eval("myAreaReserva"+(result_unico[m])).classList.remove("active")
+        
+      }
+      eval("myAreaReserva"+(result_unico[k])).classList.add("active")
+      
+      }
+    }
 
 
 });

@@ -6,7 +6,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
     <div class="sidebar-brand-icon ">
-        <img src="./img/logo3.png" alt="">
+        <img src="./img/logo3.png" class="logo-principal"alt="">
     </div>
     
 </a>
