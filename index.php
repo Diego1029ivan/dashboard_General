@@ -15,15 +15,17 @@ endforeach;
 /* Modificar el array de fechas para colocar en nuevo aray de nuevo INDEX */
 foreach($arregloYearPHP as $elemento) {
     if (!in_array($elemento, $arraySinDuplicados)) {
-        $arraySinDuplicados[] = $elemento;
+        $arraySinDuplicados[] = intval($elemento);
     }
 };
 
 
 
-$arregloYear=array_unique($arregloYearPHP);
-/*var_dump($arregloYear);
-var_dump($arraySinDuplicados);*/
+$arregloYear=array_unique($arraySinDuplicados);
+$arregloYearOrdenado=sort($arraySinDuplicados);
+var_dump($arregloYear);
+echo $arregloYearOrdenado;
+/*var_dump($arraySinDuplicados);*/
 
 
 

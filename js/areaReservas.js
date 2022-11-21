@@ -31,12 +31,13 @@ response.forEach(ElementYear=>{
 let result_unico = arregloYear.filter((item,index)=>{
   return arregloYear.indexOf(item) === index;
 })
-console.log(result_unico);
-
+console.log("arreglo año")
+console.log(result_unico.sort());
+result_unicoOrdenado=result_unico.sort()
 
 /* CREAR ARREGLOS POR AÑO */
 let arregloR=[]
-for (let j = 0; j < result_unico.length; j++) {
+for (let j = 0; j < result_unicoOrdenado.length; j++) {
  // const element = array[j];
   eval("var pagoEnero"+j+"=0")
   eval("var pagoFeb"+j+"=0")
@@ -54,7 +55,7 @@ for (let j = 0; j < result_unico.length; j++) {
     response.forEach(Element=>{
 
         //arregloYear.push(parseInt((Element.fechaEntrada).substr(0,4)))
-      if (parseInt((Element.fechaEntrada).substr(0,4))==result_unico[j]) {
+      if (parseInt((Element.fechaEntrada).substr(0,4))==result_unicoOrdenado[j]) {
         
 
             switch (parseInt((Element.fechaEntrada).substr(5,2))){
@@ -159,15 +160,15 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 let palabra = "myAreaReserva"
-console.log(eval("myAreaReserva"+(result_unico[1])))
+console.log(eval("myAreaReserva"+(result_unicoOrdenado[1])))
 /*MUY INTERESANTE PARA HALLAR EL EVAL COMO FUNCION DE TRAER EL GETLEMENTBYID */
 
-for (let l = 0; l < result_unico.length; l++) {
+for (let l = 0; l < result_unicoOrdenado.length; l++) {
 // Area Chart Example
 
 
 //eval("var ctx"+l+"="+eval("myAreaReserva"+(result_unico[0])));
-var myLineChart = new Chart(eval("myAreaReserva"+(result_unico[l])), {
+var myLineChart = new Chart(eval("myAreaReserva"+(result_unicoOrdenado[l])), {
   type: 'line',
   data: {
     labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Agos", "Sep", "Oct", "Nov", "Dic"],
@@ -257,15 +258,15 @@ var myLineChart = new Chart(eval("myAreaReserva"+(result_unico[l])), {
 }
 //////ESCOGER LOS BOTONES DE LAS FECHAS -- LÓGICA ANALÍTICA
 for (let k = 0; k < result_unico.length; k++) {
-  console.log(eval("btn"+(result_unico[k])))
-      eval("btn"+(result_unico[k])).onclick = () =>{
+  console.log(eval("btn"+(result_unicoOrdenado[k])))
+      eval("btn"+(result_unicoOrdenado[k])).onclick = () =>{
         alert("hola")
-      for (let m = 0; m < result_unico.length; m++) {
+      for (let m = 0; m < result_unicoOrdenado.length; m++) {
         
-        eval("myAreaReserva"+(result_unico[m])).classList.remove("active")
+        eval("myAreaReserva"+(result_unicoOrdenado[m])).classList.remove("active")
         
       }
-      eval("myAreaReserva"+(result_unico[k])).classList.add("active")
+      eval("myAreaReserva"+(result_unicoOrdenado[k])).classList.add("active")
       
       }
     }
