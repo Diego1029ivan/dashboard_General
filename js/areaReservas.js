@@ -260,7 +260,7 @@ var myLineChart = new Chart(eval("myAreaReserva"+(result_unicoOrdenado[l])), {
 for (let k = 0; k < result_unico.length; k++) {
   console.log(eval("btn"+(result_unicoOrdenado[k])))
       eval("btn"+(result_unicoOrdenado[k])).onclick = () =>{
-        alert("hola")
+        
       for (let m = 0; m < result_unicoOrdenado.length; m++) {
         
         eval("myAreaReserva"+(result_unicoOrdenado[m])).classList.remove("active")

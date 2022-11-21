@@ -23,8 +23,8 @@ foreach($arregloYearPHP as $elemento) {
 
 $arregloYear=array_unique($arraySinDuplicados);
 $arregloYearOrdenado=sort($arraySinDuplicados);
-var_dump($arregloYear);
-echo $arregloYearOrdenado;
+// var_dump($arregloYear);
+// echo $arregloYearOrdenado;
 /*var_dump($arraySinDuplicados);*/
 
 
