@@ -336,7 +336,7 @@ $arregloYearOrdenado=sort($arraySinDuplicados);
                     <!-- Content Row -->
                     <div class="row">
                         <!-- Area Chart -->
-                        <div class="col-lg-6 ">
+                        <div class="col-lg ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
