@@ -294,11 +294,11 @@
                     <tr>
                       <th>Nombres</th>
                       <th>Ruc</th>
-                      <th>Total de habitacion</th>
+                      <th>Usuario</th>
                       <th>Description</th>
                       <th>logo</th> 
-                        <th>Cuidad</th> 
-                        <th>Imagen</th>                
+                      <th>Cuidad</th> 
+                      <th>Imagen</th>                
                       <th>Modificar</th>
                     </tr>
                   </thead>
@@ -313,7 +313,7 @@
                         <?= $hotel->ruc?>
                       </td>
                       <td>
-                        <?= $hotel->cantidadHabitacion?>
+                        <?=  $hotel->usuario->id?>
                       </td>
                       <td>
                         <?= $hotel->descripcionHotel?>
