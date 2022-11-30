@@ -251,6 +251,8 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas de todos los Hoteles</h1>
+          <a  href="./crud/crudReserva/editar_reserva.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-bell  text-white-50"></i> Generar Reserva</a>
           <p class="mb-4">Se presenta la lista de los hoteles para verificar el estado de los hoteles y poder modifcar algún
             valor.</p>
 
